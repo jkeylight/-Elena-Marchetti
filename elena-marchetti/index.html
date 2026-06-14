@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ELENA MARCHETTI — CINEMA</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/sections.css">
+</head>
+<body>
+
+  <!-- GRAIN -->
+  <div class="grain"></div>
+
+  <!-- DUST PARTICLES -->
+  <div class="dust" id="dust"></div>
+
+  <!-- SPROCKET ROWS -->
+  <div class="sprocket-row sprocket-top" id="sprocketTop"></div>
+  <div class="sprocket-row sprocket-bottom" id="sprocketBottom"></div>
+
+  <!-- CURSOR -->
+  <div class="cursor">
+    <div class="cursor-dot"></div>
+    <div class="cursor-ring"></div>
+  </div>
+
+  <!-- LOADER — FILM LEADER -->
+  <div class="loader" id="loader">
+    <div class="leader-cross"></div>
+    <div class="leader-number" id="leaderNum">5</div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <a href="#" class="brand" id="brandLogo">ELENA MARCHETTI</a>
+    <div class="menu-trigger" id="menuTrigger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </header>
+
+  <!-- MENU OVERLAY -->
+  <div class="menu-overlay" id="menuOverlay">
+    <div class="menu-overlay-inner">
+      <div class="menu-close" id="menuClose">CLOSE</div>
+      <div class="menu-brand">ELENA MARCHETTI</div>
+      <div class="menu-items">
+        <a href="#" class="menu-item" data-frame="1"><span class="menu-num">01</span><span class="menu-title">EDITORIAL</span></a>
+        <a href="#" class="menu-item" data-frame="10"><span class="menu-num">02</span><span class="menu-title">CAMPAIGNS</span></a>
+        <a href="#" class="menu-item" data-frame="15"><span class="menu-num">03</span><span class="menu-title">ARCHIVE</span></a>
+        <a href="#" class="menu-item" data-frame="credits"><span class="menu-num">04</span><span class="menu-title">CREDITS</span></a>
+      </div>
+      <div class="menu-bottom">
+        <div class="menu-cities">
+          <span>ROMA</span><span>MILANO</span><span>PARIGI</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       HORIZONTAL FILMSTRIP
+       ========================================== -->
+  <section class="film-wrapper" id="filmWrapper">
+    <div class="film-track" id="filmTrack">
+
+      <!-- FRAME 00 — HERO -->
+      <div class="film-frame frame-hero">
+        <div class="frame-inner">
+          <img src="images/hero/hero_01.jpg" alt="Elena Marchetti">
+          <div class="frame-overlay">
+            <h1 class="hero-name">ELENA<br>MARCHETTI</h1>
+            <div class="hero-sub">ROMA &nbsp;&middot;&nbsp; MILANO &nbsp;&middot;&nbsp; PARIGI</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FRAME 01 — EDITORIAL 01 -->
+      <div class="film-frame">
+        <div class="frame-inner">
+          <img src="images/reel1/reel1_01.jpg" alt="The Fountain" class="jitter-img">
+        </div>
+        <div class="frame-label">001 &mdash; THE FOUNTAIN &mdash; ROMA</div>
+      </div>
+
+      <!-- FRAME 02 — EDITORIAL 02 -->
+      <div class="film-frame">
+        <div class="frame-inner">
+          <img src="images/reel1/reel1_02.jpg" alt="The Fiat" class="jitter-img">
+        </div>
+        <div class="frame-label">002 &mdash; THE FIAT &mdash; ROMA</div>
+      </div>
+
+      <!-- FRAME 03 — EDITORIAL 03 -->
+      <div class="film-frame">
+        <div class="frame-inner">
+          <img src="images/reel1/reel1_03.jpg" alt="The Fitting Room" class="jitter-img">
+        </div>
+        <div class="frame-label">003 &mdash; THE FITTING ROOM &mdash; MILANO</div>
+      </div>
+
+      <!-- FRAME 04 — EDITORIAL 04 -->
+      <div class="film-frame">
+        <div class="frame-inner">
+          <img src="images/reel1/reel1_04.jpg" alt="The Cafe" class="jitter-img">
+        </div>
+        <div class="frame-label">004 &mdash; THE CAFE &mdash; ROMA</div>
+      </div>
+
+      <!-- FRAME 05 — EDITORIAL 05 -->
+      <div class="film-frame">
+        <div class="frame-inner">
+          <img src="images/reel1/reel1_05.jpg" alt="The Balcony" class="jitter-img">
+        </div>
+        <div class="frame-label">005 &mdash; THE BALCONY &mdash; ROMA</div>
+      </div>
+
+      <!-- FRAME 06 — EDITORIAL 06 -->
+      <div class="film-frame">
+        <div class="frame-inner">
+          <img src="images/reel1/reel1_06.jpg" alt="The Cinema Seat" class="jitter-img">
+        </div>
+        <div class="frame-label">006 &mdash; THE CINEMA SEAT &mdash; ROMA</div>
+      </div>
+
+      <!-- FRAME 07 — EDITORIAL 07 -->
+      <div class="film-frame">
+        <div class="frame-inner">
+          <img src="images/reel1/reel1_07.jpg" alt="The Galleria" class="jitter-img">
+        </div>
+        <div class="frame-label">007 &mdash; THE GALLERIA &mdash; MILANO</div>
+      </div>
+
+      <!-- FRAME 08 — EDITORIAL 08 -->
+      <div class="film-frame">
+        <div class="frame-inner">
+          <img src="images/reel1/reel1_08.jpg" alt="The Staircase" class="jitter-img">
+        </div>
+        <div class="frame-label">008 &mdash; THE STAIRCASE &mdash; ROMA</div>
+      </div>
+
+      <!-- FRAME 09 — INTERMISSION -->
+      <div class="film-frame frame-intermission">
+        <div class="intermission-content">
+          <p class="intermission-quote">&ldquo;Cinema is truth twenty-four times per second.&rdquo;</p>
+          <p class="intermission-credit">&mdash; Jean-Luc Godard</p>
+        </div>
+      </div>
+
+      <!-- FRAME 10 — CAMPAIGN 01 -->
+      <div class="film-frame frame-campaign">
+        <div class="frame-inner">
+          <img src="images/reel2/reel2_01.jpg" alt="Valentino" class="jitter-img">
+        </div>
+        <div class="frame-label frame-label-large">001 &mdash; VALENTINO &mdash; HC27 &mdash; ROMA</div>
+      </div>
+
+      <!-- FRAME 11 — CAMPAIGN 02 -->
+      <div class="film-frame frame-campaign">
+        <div class="frame-inner">
+          <img src="images/reel2/reel2_02.jpg" alt="Dolce Gabbana" class="jitter-img">
+        </div>
+        <div class="frame-label frame-label-large">002 &mdash; DOLCE &amp; GABBANA &mdash; SS28 &mdash; SICILIA</div>
+      </div>
+
+      <!-- FRAME 12 — CAMPAIGN 03 -->
+      <div class="film-frame frame-campaign">
+        <div class="frame-inner">
+          <img src="images/reel2/reel2_03.jpg" alt="Gucci" class="jitter-img">
+        </div>
+        <div class="frame-label frame-label-large">003 &mdash; GUCCI &mdash; FW27 &mdash; FIRENZE</div>
+      </div>
+
+      <!-- FRAME 13 — CAMPAIGN 04 -->
+      <div class="film-frame frame-campaign">
+        <div class="frame-inner">
+          <img src="images/reel2/reel2_04.jpg" alt="Fendi" class="jitter-img">
+        </div>
+        <div class="frame-label frame-label-large">004 &mdash; FENDI &mdash; HC26 &mdash; ROMA</div>
+      </div>
+
+      <!-- FRAME 14 — CAMPAIGN 05 -->
+      <div class="film-frame frame-campaign">
+        <div class="frame-inner">
+          <img src="images/reel2/reel2_05.jpg" alt="Armani" class="jitter-img">
+        </div>
+        <div class="frame-label frame-label-large">005 &mdash; ARMANI PRIV&Eacute; &mdash; FW27 &mdash; MILANO</div>
+      </div>
+
+      <!-- FRAME 15 — ARCHIVE -->
+      <div class="film-frame frame-archive">
+        <div class="archive-bg">
+          <img src="" alt="" id="archiveBgImg">
+        </div>
+        <div class="archive-list">
+          <div class="archive-header-label">ARCHIVE</div>
+          <div class="archive-row" data-img="images/archive/archive_01.jpg">
+            <span class="archive-idx">001</span>
+            <span class="archive-name">VALENTINO HC24</span>
+            <span class="archive-city">ROMA</span>
+          </div>
+          <div class="archive-row" data-img="images/archive/archive_02.jpg">
+            <span class="archive-idx">002</span>
+            <span class="archive-name">DOLCE &amp; GABBANA FW25</span>
+            <span class="archive-city">MILANO</span>
+          </div>
+          <div class="archive-row" data-img="images/archive/archive_03.jpg">
+            <span class="archive-idx">003</span>
+            <span class="archive-name">FENDI HC25</span>
+            <span class="archive-city">PARIGI</span>
+          </div>
+          <div class="archive-row" data-img="images/archive/archive_04.jpg">
+            <span class="archive-idx">004</span>
+            <span class="archive-name">GUCCI SS26</span>
+            <span class="archive-city">FIRENZE</span>
+          </div>
+          <div class="archive-row" data-img="images/archive/archive_05.jpg">
+            <span class="archive-idx">005</span>
+            <span class="archive-name">PRADA FW26</span>
+            <span class="archive-city">MILANO</span>
+          </div>
+          <div class="archive-row" data-img="images/archive/archive_06.jpg">
+            <span class="archive-idx">006</span>
+            <span class="archive-name">ARMANI PRIV&Eacute; SS27</span>
+            <span class="archive-city">MILANO</span>
+          </div>
+          <div class="archive-row" data-img="images/archive/archive_07.jpg">
+            <span class="archive-idx">007</span>
+            <span class="archive-name">VALENTINO HC27</span>
+            <span class="archive-city">ROMA</span>
+          </div>
+          <div class="archive-row" data-img="images/archive/archive_08.jpg">
+            <span class="archive-idx">008</span>
+            <span class="archive-name">DOLCE &amp; GABBANA FW27</span>
+            <span class="archive-city">SICILIA</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- FRAME 16 — ENDCARD -->
+      <div class="film-frame frame-endcard">
+        <div class="frame-inner">
+          <img src="images/endcard/endcard_01.jpg" alt="The Departure" class="jitter-img">
+        </div>
+        <div class="frame-label frame-label-large">THE DEPARTURE &mdash; ROMA</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================
+       CREDITS — VERTICAL ROLL
+       ========================================== -->
+  <section class="credits" id="credits">
+    <div class="credits-inner">
+      <div class="credits-spacer"></div>
+      <div class="credits-line">DIRECTED BY</div>
+      <div class="credits-name">LOOKBOOK STUDIO</div>
+      <div class="credits-gap"></div>
+      <div class="credits-line">STARRING</div>
+      <div class="credits-name">ELENA MARCHETTI</div>
+      <div class="credits-gap"></div>
+      <div class="credits-line">PHOTOGRAPHY</div>
+      <div class="credits-name">PETER LINDBERGH</div>
+      <div class="credits-name">PAOLO ROVERSI</div>
+      <div class="credits-gap"></div>
+      <div class="credits-line">STYLING</div>
+      <div class="credits-name">CARINE ROITFELD</div>
+      <div class="credits-gap"></div>
+      <div class="credits-line">HAIR &amp; MAKEUP</div>
+      <div class="credits-name">GUIDO PALAU</div>
+      <div class="credits-name">PAT MCGRATH</div>
+      <div class="credits-gap"></div>
+      <div class="credits-line">ORIGINAL SCORE</div>
+      <div class="credits-name">ENNIO MORRICONE</div>
+      <div class="credits-gap"></div>
+      <div class="credits-line">PRODUCED BY</div>
+      <div class="credits-name">LOOKBOOK STUDIO</div>
+      <div class="credits-gap"></div>
+      <div class="credits-line">FASHION</div>
+      <div class="credits-name">VALENTINO</div>
+      <div class="credits-name">DOLCE &amp; GABBANA</div>
+      <div class="credits-name">GUCCI</div>
+      <div class="credits-name">FENDI</div>
+      <div class="credits-name">ARMANI PRIV&Eacute;</div>
+      <div class="credits-gap"></div>
+      <div class="credits-line">CITIES</div>
+      <div class="credits-name">ROMA &nbsp;&middot;&nbsp; MILANO &nbsp;&middot;&nbsp; FIRENZE &nbsp;&middot;&nbsp; SICILIA</div>
+      <div class="credits-gap"></div>
+      <div class="credits-line credits-film">CINEMA</div>
+      <div class="credits-line credits-sub">A LOOKBOOK STUDIO FILM</div>
+      <div class="credits-spacer"></div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-left">
+      <div class="footer-brand">A LOOKBOOK Studio Experience</div>
+      <div class="footer-copy">&copy; Norman James</div>
+    </div>
+    <div class="footer-right">
+      made with love &hearts; by Empathy Studio
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+  <script src="js/cursor.js"></script>
+  <script src="js/dust.js"></script>
+  <script src="js/loader.js"></script>
+  <script src="js/horizontalscroll.js"></script>
+  <script src="js/archive.js"></script>
+  <script src="js/app.js"></script>
+
+</body>
+</html>

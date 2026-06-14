@@ -1,0 +1,226 @@
+PROJECT BRIEF — 06
+ELENA MARCHETTI
+"CINEMA"
+Complete Production Document
+
+
+I. MODEL IDENTITY
+
+Name: ELENA MARCHETTI
+Nationality: Italian
+Profession: International runway and editorial model
+Base Cities: Rome, Paris, Milan
+Agency Representation: Women Management
+
+
+Physical DNA:
+
+Southern Italian Mediterranean features
+Warm olive skin
+Deep dark eyes with heavy lids — cinematic eyes
+Dark brown hair, shoulder-length, often loosely styled
+Strong Roman nose (not corrected, never corrected)
+Curves that carry couture differently — the body has weight
+178cm
+The face of Fellini's Rome — dramatic, warm, imperfect, unforgettable
+
+Personality DNA:
+
+Seductive without trying — it's in the way she holds a glass
+Moves slowly and deliberately — never rushed
+Her eyes do the acting — the rest is stillness
+She exists in the golden age while living in the present
+Nostalgia is her native language
+
+Career Narrative:
+
+Discovered at 19 in a Rome cinema by a Dolce & Gabbana casting director
+First show: Valentino Haute Couture — she walked like a woman from another century
+Has walked for Valentino, Dolce & Gabbana, Fendi, Gucci, Prada, Armani
+Known for: the cinematic walk, the old-world glamour
+Not known for: edginess, rebellion, digital presence
+
+
+II. PROJECT DNA
+
+Emotion: Nostalgia. Seduction. The beauty of imperfection — dust on the lens, grain in the shadow, the warmth of analog. Like finding a photograph in a book you forgot you owned.
+
+
+World: A Rome screening room. 35mm projector light cutting through cigarette smoke. The flicker of film. A Fellini film you've never seen but somehow remember.
+
+
+Archetype: Cinematic Glamour
+
+
+Audience Fantasy: The cinephile, the analog romantic, the person who still buys physical photographs. Someone who believes beauty was better when it was imperfect.
+
+
+North Star Moment: A film leader countdown (5... 4... 3... 2... 1...) plays on a black screen, complete with scratches and dust. Then the "film" starts — the first image flickers with real film gate jitter.
+
+
+
+III. COLOR SYSTEM
+
+css
+css
+:root {
+  --filmblack: #0D0B09;
+  --ivory: #F0E4CF;
+  --sepia: #8B6914;
+  --amber: #1A120B;
+  --dust: #A89070;
+  --sprocket: #2A2218;
+}
+
+Everything through a warm sepia filter. Like Kodak Tri-X 400 processed in warm-tone developer.
+
+
+
+IV. TYPOGRAPHY
+
+Display:Instrument Serif — 400 weight
+Body:Lora — 400 weight
+The fonts feel like movie credits.
+
+
+
+V. SITE ARCHITECTURE
+
+THE ENTIRE SITE IS HORIZONTAL. Vertical scroll drives horizontal movement. The viewport is a film strip.
+
+
+SCENE 00 — FILM LEADER
+Countdown: 5... 4... 3... 2... 1... white numbers on black, scratched, with film dust particles. Each number holds 0.6s. After "1", the film "starts" — the first frame flickers in.
+
+
+SCENE 01 — HERO FRAME
+The first frame of the "film." Elena's portrait, full-bleed, with sprocket hole decorations on top and bottom edges. Her name in Instrument Serif overlaid.
+
+
+SCENE 02 — THE REEL (EDITORIAL)
+8 frames, each separated by sprocket holes. Horizontal scroll moves through them frame by frame. Each frame holds for the "duration" of scroll distance. Frame counter: 001 / 008.
+
+
+SCENE 03 — INTERMISSION
+A title card: white text on black — the manifesto/quote section. "Cinema is truth twenty-four times per second." Holds for 3 seconds of scroll distance.
+
+
+SCENE 04 — THE SECOND REEL (CAMPAIGNS)
+4 campaign frames, larger than editorial.
+
+
+SCENE 05 — THE ARCHIVE
+Text list scrolling horizontally. On hover: frame behind the text develops (image fades in).
+
+
+SCENE 06 — CREDITS
+The end credits. Text scrolls up vertically (traditional film credit roll). Her name. The agencies. The footer.
+
+
+
+VI. SIGNATURE INTERACTION — FILM GATE JITTER
+
+Every image has a constant subtle CSS animation mimicking film gate jitter:
+
+css
+css
+@keyframes jitter {
+  0%   { transform: translate(0, 0); }
+  25%  { transform: translate(-1px, 1px); }
+  50%  { transform: translate(1px, -1px); }
+  75%  { transform: translate(-1px, 0); }
+  100% { transform: translate(0, 1px); }
+}
+Running at 24fps (each step 41.6ms). On hover, the jitter STOPS — the "projector focuses." The image becomes stable. Film dust particles float across the viewport as a CSS pseudo-element.
+
+
+
+VII. SCROLL
+
+Vertical-to-horizontal GSAP translation. Lerp 0.06. Slow, frame-by-frame feeling. Each frame gets equal scroll distance.
+
+
+
+VIII. CURSOR
+
+css
+css
+.cursor-dot { width: 8px; height: 8px; background: var(--ivory); }
+.cursor-ring { width: 32px; height: 32px; border: 1px solid rgba(240,228,207,.3); }
+
+Warm ivory. Ring lags at lerp 0.08.
+
+
+
+IX. IMAGE COLLECTION
+
+Section	Images	Dimensions	File Target
+Hero	1	1200 × 1600	< 400KB
+Reel 1	8	1200 × 900	< 300KB
+Reel 2	4	1400 × 1000	< 400KB
+Archive	6	1200 × 900	< 250KB
+
+Total: 19 images
+
+
+PHOTOGRAPHER DNA
+Fellini's cinematographer Gianni Di Venanzo + Helmut Newton + Paolo Roversi
+
+
+COLOR DOCTRINE
+Warm sepia monochrome. Film grain heavy. Dust. Scratches. The image looks like it was found in a Rome archive, not shot yesterday.
+
+
+LENS DOCTRINE
+50mm — the filmmaker's lens
+
+
+IMAGE PROMPTS (CONDENSED)
+
+hero_01.jpg: ELENA in a Rome cinema foyer, art deco architecture, warm sepia monochrome, heavy film grain, she stands in a column of light from the projection booth, wearing a black Valentino gown, the dust particles in the light are visible, 50mm, Fellini's Rome made fashion
+
+
+Reel 1-8: Each frame a cinematic still — Elena at a Roman fountain at dusk, in a Fiat driving through Rome, in a Dolce & Gabbana fitting room, in a Fendi atelier, seated at a Roman cafe, in a cinema balcony, walking a Milanese galleria, standing in the Colosseum at dawn
+
+
+Reel 2-4: Valentino campaign in a Roman palazzo, Dolce & Gabbana on a Sicilian terrace, Gucci in a Florence leather workshop, Fendi at the Trevi Fountain at night
+
+
+Archive 1-6: Film canisters on a shelf, a cinema ticket stub, backstage in Roman theater, Polaroids in warm sepia, a director's chair with her name, the empty cinema after the film ends
+
+
+
+X. FOLDER STRUCTURE
+
+text
+text
+elena-marchetti/
+├── index.html
+├── css/
+│   ├── main.css
+│   └── sections.css
+├── js/
+│   ├── app.js
+│   ├── cursor.js
+│   ├── loader.js
+│   ├── horizontalscroll.js
+│   ├── jitter.js
+│   ├── dust.js
+│   └── archive.js
+└── images/
+    ├── hero/
+    ├── reel1/
+    ├── reel2/
+    └── archive/
+
+
+XI. SUCCESS METRICS
+
+The site succeeds when:
+
+The viewer forgets they're on a website and feels like they're watching a film
+The jitter is comforting, not annoying
+The horizontal scroll feels natural — not forced
+The sepia makes everything look like memory
+The credits at the end make the viewer smile
+

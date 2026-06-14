@@ -1,0 +1,389 @@
+/* ==========================================================
+   ELENA MARCHETTI — CINEMA
+   sections.css — Scene-specific styles
+   ========================================================== */
+
+/* =============================================
+   LOADER — FILM LEADER
+   ============================================= */
+.loader {
+  position: fixed; inset: 0;
+  background: #000;
+  z-index: 999999;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 20px;
+}
+.leader-cross {
+  width: 40px; height: 40px;
+  position: relative;
+  opacity: .15;
+}
+.leader-cross::before,
+.leader-cross::after {
+  content: '';
+  position: absolute;
+  background: var(--ivory);
+}
+.leader-cross::before {
+  width: 1px; height: 100%;
+  left: 50%; top: 0;
+  transform: translateX(-50%);
+}
+.leader-cross::after {
+  width: 100%; height: 1px;
+  top: 50%; left: 0;
+  transform: translateY(-50%);
+}
+.leader-number {
+  font-family: 'Lora', serif;
+  font-size: clamp(4rem, 10vw, 8rem);
+  font-weight: 400;
+  color: var(--ivory);
+  opacity: 0;
+  line-height: 1;
+}
+
+/* =============================================
+   SPROCKET ROWS
+   ============================================= */
+.sprocket-row {
+  position: fixed;
+  left: 0; right: 0;
+  height: 32px;
+  z-index: 500;
+  background: #000;
+  opacity: 0;
+  transition: opacity .6s ease;
+}
+.sprocket-row.visible { opacity: 1; }
+.sprocket-top { top: 0; }
+.sprocket-bottom { bottom: 0; }
+.sprocket-row::after {
+  content: '';
+  position: absolute;
+  left: 8px; right: 8px;
+  top: 50%; transform: translateY(-50%);
+  height: 14px;
+  background: repeating-linear-gradient(
+    to right,
+    transparent 0px,
+    transparent 22px,
+    var(--sprocket) 22px,
+    var(--sprocket) 38px,
+    transparent 38px,
+    transparent 56px
+  );
+}
+
+/* =============================================
+   FILMSTRIP — HORIZONTAL TRACK
+   ============================================= */
+.film-wrapper {
+  position: relative;
+  overflow: hidden;
+}
+.film-track {
+  display: flex;
+  flex-wrap: nowrap;
+  will-change: transform;
+}
+
+/* =============================================
+   FILM FRAMES
+   ============================================= */
+.film-frame {
+  width: 100vw;
+  height: 100vh;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 42px 6vw;
+  position: relative;
+  border-right: 1px solid rgba(26,22,16,0.5);
+}
+.frame-inner {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  width: 100%;
+  max-width: 80vw;
+  position: relative;
+}
+.frame-inner img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  filter: sepia(0.3) contrast(1.1) brightness(0.95);
+}
+.frame-label {
+  padding-top: 16px;
+  font-family: 'Lora', serif;
+  font-size: .6rem;
+  letter-spacing: .4em;
+  opacity: .25;
+  text-transform: uppercase;
+  text-align: center;
+}
+.frame-label-large {
+  font-size: .65rem;
+}
+
+/* =============================================
+   HERO FRAME
+   ============================================= */
+.frame-hero .frame-inner {
+  max-width: 50vw;
+}
+.frame-hero .frame-inner img {
+  max-height: 80vh;
+}
+.frame-overlay {
+  position: absolute;
+  bottom: 6vh; left: 0;
+  text-align: left;
+  z-index: 2;
+}
+.hero-name {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 400;
+  line-height: .88;
+  letter-spacing: -.02em;
+  text-shadow: 0 2px 40px rgba(0,0,0,.8);
+}
+.hero-sub {
+  font-family: 'Lora', serif;
+  font-size: .65rem;
+  letter-spacing: .4em;
+  opacity: .5;
+  margin-top: 20px;
+  text-shadow: 0 1px 20px rgba(0,0,0,.8);
+}
+
+/* =============================================
+   INTERMISSION FRAME
+   ============================================= */
+.frame-intermission {
+  background: #000;
+  justify-content: center;
+}
+.intermission-content {
+  text-align: center;
+  max-width: 600px;
+  padding: 0 5vw;
+}
+.intermission-quote {
+  font-family: 'Instrument Serif', serif;
+  font-style: italic;
+  font-size: clamp(1.6rem, 3vw, 2.8rem);
+  line-height: 1.5;
+  color: var(--ivory);
+  opacity: .8;
+}
+.intermission-credit {
+  font-family: 'Lora', serif;
+  font-size: .7rem;
+  letter-spacing: .35em;
+  opacity: .3;
+  margin-top: 30px;
+}
+
+/* =============================================
+   ENDCARD FRAME
+   ============================================= */
+.frame-endcard .frame-inner {
+  max-width: 85vw;
+}
+.frame-endcard .frame-inner img {
+  max-height: 75vh;
+}
+
+/* =============================================
+   CAMPAIGN FRAMES
+   ============================================= */
+.frame-campaign .frame-inner {
+  max-width: 85vw;
+}
+.frame-campaign .frame-inner img {
+  max-height: 75vh;
+}
+
+/* =============================================
+   JITTER ANIMATION — FILM GATE
+   ============================================= */
+@keyframes jitter {
+  0%   { transform: translate(0, 0); }
+  10%  { transform: translate(-1px, 0.5px); }
+  20%  { transform: translate(0.5px, -1px); }
+  30%  { transform: translate(-0.5px, 0); }
+  40%  { transform: translate(1px, 0.5px); }
+  50%  { transform: translate(0, -0.5px); }
+  60%  { transform: translate(-1px, 1px); }
+  70%  { transform: translate(0.5px, 0); }
+  80%  { transform: translate(0, 0.5px); }
+  90%  { transform: translate(-0.5px, -1px); }
+  100% { transform: translate(0, 0); }
+}
+.jitter-img {
+  animation: jitter 0.5s steps(1) infinite;
+}
+.film-frame:hover .jitter-img {
+  animation-play-state: paused;
+}
+
+/* =============================================
+   DUST PARTICLES
+   ============================================= */
+.dust {
+  position: fixed; inset: 0;
+  pointer-events: none; z-index: 9998;
+  overflow: hidden;
+}
+.dust-particle {
+  position: absolute;
+  background: var(--ivory);
+  border-radius: 50%;
+  animation: dustFloat linear infinite;
+}
+@keyframes dustFloat {
+  0%   { transform: translate(0, 0); opacity: 0; }
+  15%  { opacity: 0.25; }
+  85%  { opacity: 0.2; }
+  100% { transform: translate(120px, -180px); opacity: 0; }
+}
+
+/* =============================================
+   ARCHIVE FRAME
+   ============================================= */
+.frame-archive {
+  padding: 42px 10vw;
+}
+.archive-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity .8s ease;
+}
+.archive-bg img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: sepia(1) brightness(0.25) contrast(1.1);
+}
+.archive-list {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 700px;
+}
+.archive-header-label {
+  font-family: 'Lora', serif;
+  font-size: .6rem;
+  letter-spacing: .45em;
+  opacity: .25;
+  text-transform: uppercase;
+  margin-bottom: 40px;
+}
+.archive-row {
+  display: flex;
+  align-items: baseline;
+  gap: 2vw;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+  cursor: pointer;
+  transition: all .4s var(--ease);
+}
+.archive-row:hover {
+  color: var(--sepia);
+  transform: translateX(16px);
+}
+.archive-idx {
+  font-family: 'Lora', serif;
+  font-size: .6rem;
+  letter-spacing: .25em;
+  opacity: .3;
+  min-width: 30px;
+}
+.archive-name {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(1.2rem, 2.5vw, 2rem);
+  font-weight: 400;
+  flex: 1;
+}
+.archive-city {
+  font-family: 'Lora', serif;
+  font-size: .6rem;
+  letter-spacing: .35em;
+  opacity: .25;
+}
+
+/* =============================================
+   CREDITS — VERTICAL ROLL
+   ============================================= */
+.credits {
+  position: relative;
+  overflow: hidden;
+}
+.credits-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 6vw;
+  min-height: 100vh;
+}
+.credits-spacer {
+  height: 40vh;
+}
+.credits-gap {
+  height: 60px;
+}
+.credits-line {
+  font-family: 'Lora', serif;
+  font-size: .65rem;
+  letter-spacing: .45em;
+  opacity: .3;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+.credits-name {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(1.4rem, 2.5vw, 2.2rem);
+  font-weight: 400;
+  opacity: .85;
+  margin-bottom: 4px;
+}
+.credits-film {
+  font-family: 'Instrument Serif', serif;
+  font-size: clamp(3rem, 8vw, 7rem);
+  font-weight: 400;
+  letter-spacing: .1em;
+  opacity: .15;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+.credits-sub {
+  font-size: .6rem;
+  opacity: .2;
+  letter-spacing: .5em;
+}
+
+/* =============================================
+   MOBILE — SECTION OVERRIDES
+   ============================================= */
+@media (max-width: 1000px) {
+  .film-frame { padding: 20px 4vw; }
+  .frame-inner { max-width: 92vw; }
+  .frame-hero .frame-inner { max-width: 70vw; }
+  .frame-overlay { bottom: 4vh; }
+  .hero-name { font-size: clamp(2.5rem, 12vw, 5rem); }
+  .frame-campaign .frame-inner { max-width: 95vw; }
+  .frame-archive { padding: 20px 6vw; }
+  .archive-row { gap: 3vw; padding: 14px 0; }
+  .archive-name { font-size: clamp(1rem, 4vw, 1.5rem); }
+  .intermission-quote { font-size: clamp(1.2rem, 4vw, 2rem); }
+  .credits-name { font-size: clamp(1.2rem, 4vw, 1.8rem); }
+}
